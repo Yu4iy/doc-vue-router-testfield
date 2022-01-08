@@ -1,7 +1,7 @@
 <template>
   <div class="card">
 	<div
-		@click="$router.push({path: `/${elem.id}`})"
+		@click="$router.push({path: `${elem.id}`})"
 	>
 		{{elem.id}}                           
 	</div>

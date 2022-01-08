@@ -1,8 +1,7 @@
 import VueRouter from 'vue-router'
 import MainPage from '../pages/main-page'
 import FirstPage from '../pages/1-st-page'
-import SecondPage from '../pages/2-nd-page'
-import ThirdPage from '../pages/3-rd-page'
+
 import Page from '../pages/page-on-page'
 import Loyout from '../pages/Loyout'
 
@@ -21,22 +20,13 @@ export default new VueRouter({
 			component:Loyout,
 			children:[
 				{
-					path: '/',
+					path: '',
 					name: 'first-page',
 					component: FirstPage,
 				},
+
 				{
-					path: '/',
-					name: 'second-page',
-					component: SecondPage,
-				},
-				{
-					path: '/',
-					name: 'third-page',
-					component:ThirdPage,
-				},
-				{
-					path: '/:id',
+					path: ':id',
 					name: 'page',
 					component:Page,
 				},
