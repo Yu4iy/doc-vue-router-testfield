@@ -29,6 +29,13 @@ export default new VueRouter({
 					path: ':id',
 					name: 'page',
 					component:Page,
+					beforeEnter: (to, from, next) => {
+						if(localStorage.getItem('auth')){
+							next()
+						}else{
+							next({name:'first-page'})
+						}
+					}
 				},
 				{
 					path: '/second-page',

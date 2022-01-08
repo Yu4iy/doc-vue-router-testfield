@@ -74,26 +74,30 @@
 5. Nell router agiungere array children
 	children:
 	[
-6. aggiungere componenti e modificare path
+6. aggiungere componenti, e modificare path( >>>stare attento all'ordine degli oggetti<<<)
 		{
-			path: '/',
+			path: '',
 			name: 'first-page',
 			component: FirstPage,
-		},
-		{
-			path: '/',
-			name: 'second-page',
-			component: SecondPage,
-		},
-		{
-			path: '/',
-			name: 'third-page',
-			component:ThirdPage,
 		},
 		{
 			path: ':id',
 			name: 'page',
 			component:Page,
 		},
+		<!-- {
+			path: 'second-page',
+			name: 'second-page',
+			component: SecondPage,
+		},
+		{
+			path: 'third-page',
+			name: 'third-page',
+			component:ThirdPage,
+		}, -->
+
 
 	]
+____________________________________________
+<!-- HOOKS	 -->
+

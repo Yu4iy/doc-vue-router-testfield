@@ -1,6 +1,9 @@
 <template>
   <div class="header">
-	HEADER
+	<h1>HEADER</h1>
+	<button @click="changeStatus">
+		{{auth? 'LOGOUT':'LOGIN'}}
+	</button>
   </div>
 </template>
 
@@ -10,10 +13,28 @@
 export default {
 	data(){
 		return{
+			auth: false
+	}
+},
+created(){
+this.auth = localStorage.getItem('auth') !== null
+},
+methods:{
+		changeStatus(){
+			if (this.auth) {
+				localStorage.removeItem('auth')
+				this.$router.push({name: 'main'})
+			}
+			else{
+				localStorage.setItem('auth', true)
+				this.auth = true
+
+			}
+		}
 
 	}
 
-}
+
 		
 
 
@@ -23,9 +44,12 @@ export default {
 
 <style lang="scss" scoped >
 	.header{
-		width: 100%;
-		height: 50px;
 		background: chartreuse;
-
+		display: flex;
+		padding: 0  40px;
+		justify-content: space-between;
+		button{
+			padding:0 20px;
+		}
 	}
 </style>
