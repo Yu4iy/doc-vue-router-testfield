@@ -1,0 +1,65 @@
+1. Definire router nell  nell MAIN JS
+	<!-- import Vue from 'vue'
+	import App from './App.vue' -->
+	import VueRouter from 'vue-router'<----
+
+	Vue.use(VueRouter)<----
+	<!-- Vue.config.productionTip = false
+
+	new Vue({
+	render: h => h(App),
+	}).$mount('#app') -->
+
+
+2. Creare cartella con routs dove importiamo router
+	import VueRouter from 'vue-router'
+
+3.importare  routes components
+	import MainPage from '../pages/MainPage'
+	import FirstPage from '../pages/FirstPage'
+
+	export default new VueRouter({
+		mode: 'history', <---------- per togliere # 
+		routes:
+		[
+3.Creare routes	
+			{
+				path: '/'
+				name: 'main'
+				component: MainPage
+			},
+			{
+				path: '/'
+				name: 'FirstPage'
+				component: FirstPage
+			}
+		]
+	})
+
+4.Colegare router nell MAIN JS
+	<!-- import Vue from 'vue'
+	import App from './App.vue'
+	import VueRouter from 'vue-router'-->
+	import router from './router/index.js' <-----------
+	<!--Vue.use(VueRouter)
+	Vue.config.productionTip = false
+
+	new Vue({
+	render: h => h(App),-->
+	router  <---------------- definire router
+	<!-- }).$mount('#app') -->
+
+5.Metere main tag (<router-view></router-view>) dove vogliamo invocare nostri routes	
+
+	<template>
+		<div id="app">
+			<router-view></router-view> <-----------
+		</div>
+	</template>
+
+6.Colegare button con routes	
+<button  @click="$router.push({name:'first-page'})" >First-Page</button> <---- best practis utilizare name: invece di path:
+
+
+
+
