@@ -1,7 +1,8 @@
 <template>
   <div class="main-page">
 	<button @click="$router.push({name:'first-page'})">first-page</button>
-
+	<button @click="$router.push({name:'second-page'})">second-page</button>
+	<button @click="$router.push({name:'third-page'})">third-page</button>
   </div>
 </template>
 
