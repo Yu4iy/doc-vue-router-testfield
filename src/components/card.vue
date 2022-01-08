@@ -1,9 +1,9 @@
 <template>
   <div class="card">
 	<div
-		@click="$router.push({path: `/first-page/${elem.id}`})"
+		@click="$router.push({path: `/${elem.id}`})"
 	>
-		{{elem.id}}
+		{{elem.id}}                           
 	</div>
   </div>
 </template>
